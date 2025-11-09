@@ -93,7 +93,7 @@ def main():
     while True:
         try:
             with sr.Microphone() as source:
-                print("Ожидание ключевого слова 'привет, братишка'...")
+                print("Ожидание ключевого слова 'привет'...")
                 recognizer.adjust_for_ambient_noise(source)
                 audio = recognizer.listen(source, timeout=None, phrase_time_limit=100)
                 keyword = recognizer.recognize_google(audio, language='ru-RU').lower()
